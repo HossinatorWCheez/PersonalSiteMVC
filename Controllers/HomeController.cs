@@ -18,6 +18,26 @@ namespace PersonalSiteMVC.Controllers
             return View();
         }
 
+        public IActionResult Resume()
+        {
+            return View();
+        }
+
+        public IActionResult Portfolio()
+        {
+            return View();
+        }
+
+        public IActionResult Classmates()
+        {
+            return View();
+        }
+
+        public IActionResult Contact()
+        {
+            return View();
+        }
+
         public IActionResult Privacy()
         {
             return View();

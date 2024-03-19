@@ -619,7 +619,7 @@ section {
   color: #fff;
 }
 
-.about img[src="assets/img/gamer.jpg"] {
+.about img[src="/assets/img/gamer.jpg"] {
   border-radius: 20px;
 }
 
