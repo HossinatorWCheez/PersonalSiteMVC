@@ -1,6 +1,9 @@
 using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
 using PersonalSiteMVC.Data;
+using PersonalSiteMVC.Models;
+using PaulMiami;
+using PaulMiami.AspNetCore.Mvc.Recaptcha;
 
 namespace PersonalSiteMVC
 {
@@ -19,6 +22,14 @@ namespace PersonalSiteMVC
             builder.Services.AddDefaultIdentity<IdentityUser>(options => options.SignIn.RequireConfirmedAccount = true)
                 .AddEntityFrameworkStores<ApplicationDbContext>();
             builder.Services.AddControllersWithViews();
+
+            builder.Services.AddOptions<CredentialSettings>().Bind(builder.Configuration.GetSection("Credentials"));
+
+            builder.Services.AddRecaptcha(new RecaptchaOptions
+            {
+                SiteKey = builder.Configuration.GetValue<string>("Credentials:reCAPTCHA:SiteKey"),
+                SecretKey = builder.Configuration.GetValue<string>("Credentials:reCAPTCHA:SecretKey")
+            });
 
             var app = builder.Build();
 

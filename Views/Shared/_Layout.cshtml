@@ -103,11 +103,11 @@
                     <div class="col-lg-2 col-md-6 col-12 footer-links">
                         <h4>Useful Links</h4>
                         <ul>
-                            <li><i class="bx bx-chevron-right"></i> <a href="index.html">Home</a></li>
-                            <li><i class="bx bx-chevron-right"></i> <a href="Resume.html">Resume</a></li>
-                            <li><i class="bx bx-chevron-right"></i> <a href="portfolio.html">Portfolio</a></li>
-                            <li><i class="bx bx-chevron-right"></i> <a href="classmates.html">My Classmates</a></li>
-                            <li><i class="bx bx-chevron-right"></i> <a href="contact.html">Contact Page</a></li>
+                            <li><i class="bx bx-chevron-right"></i> <a href="@Url.Action("Index", "Home")">Home</a></li>
+                            <li><i class="bx bx-chevron-right"></i> <a href="@Url.Action("Resume", "Home")">Resume</a></li>
+                            <li><i class="bx bx-chevron-right"></i> <a href="@Url.Action("Portfolio", "Home")">Portfolio</a></li>
+                            <li><i class="bx bx-chevron-right"></i> <a href="@Url.Action("Classmates", "Home")">My Classmates</a></li>
+                            <li><i class="bx bx-chevron-right"></i> <a href="@Url.Action("Contact", "Home")">Contact Page</a></li>
                         </ul>
                     </div>
 
@@ -152,6 +152,7 @@
 
     <!-- Template Main JS File -->
     <script src="/assets/js/main.js"></script>
+    @RenderSection("scripts", required: false)
 
 </body>
 

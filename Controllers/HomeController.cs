@@ -1,16 +1,58 @@
 ﻿using Microsoft.AspNetCore.Mvc;
+using Microsoft.Extensions.Options;
+using MimeKit;
+using MailKit.Net.Smtp;
 using PersonalSiteMVC.Models;
 using System.Diagnostics;
+using static Org.BouncyCastle.Math.EC.ECCurve;
 
 namespace PersonalSiteMVC.Controllers
 {
     public class HomeController : Controller
     {
         private readonly ILogger<HomeController> _logger;
+        private readonly CredentialSettings _credentials;
+        private readonly IConfiguration _config;
 
-        public HomeController(ILogger<HomeController> logger)
+        [HttpPost]
+        public IActionResult Contact(ContactViewModel cvm)
+        {
+            string message = $"You have recieved a new email from your site's contact form!<br />" +
+                $"Sender: {cvm.Name}<br />Email: {cvm.Email}<br />Subject: {cvm.Subject}<br />" +
+                $"Message: {cvm.Message}";
+            var mm = new MimeMessage();
+
+            mm.From.Add(new MailboxAddress("Sender", _credentials.Email.Username));
+            mm.To.Add(new MailboxAddress("Personal", _credentials.Email.Recipient));
+            mm.Subject = $"New contact form message: [{cvm.Subject}]";
+            mm.Body = new TextPart("HTML") { Text = message };
+            mm.Priority = MessagePriority.Urgent;
+            mm.ReplyTo.Add(new MailboxAddress("User", cvm.Email));
+
+            using (var client = new SmtpClient())
+            {
+                client.Connect(_credentials.Email.Server, 8889);
+                client.Authenticate(_credentials.Email.Username, _credentials.Email.Password);
+
+                try
+                {
+                    client.Send(mm);
+                }
+                catch (Exception ex)
+                {
+                    ViewBag.ErrorMessage = $"There was an error in processing your request." +
+                        $"Please try again later.<br />Error Message: {ex.StackTrace}";
+                    return View(cvm);
+                }
+            }
+            return View("EmailConfirmation", cvm);
+        }
+
+        public HomeController(ILogger<HomeController> logger, IOptions<CredentialSettings> settings, IConfiguration config)
         {
             _logger = logger;
+            _credentials = settings.Value;
+            _config = config;
         }
 
         public IActionResult Index()
@@ -48,5 +90,6 @@ namespace PersonalSiteMVC.Controllers
         {
             return View(new ErrorViewModel { RequestId = Activity.Current?.Id ?? HttpContext.TraceIdentifier });
         }
+
     }
 }

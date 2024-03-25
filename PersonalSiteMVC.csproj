@@ -118,13 +118,9 @@
     <Content Remove="wwwroot\assets\vendor\swiper\swiper-bundle.min.css" />
     <Content Remove="wwwroot\assets\vendor\swiper\swiper-bundle.min.js" />
     <Content Remove="wwwroot\assets\vendor\swiper\swiper-bundle.min.js.map" />
-    <Content Remove="wwwroot\classmates.html" />
-    <Content Remove="wwwroot\contact.html" />
     <Content Remove="wwwroot\forms\contact.php" />
     <Content Remove="wwwroot\forms\Readme.txt" />
-    <Content Remove="wwwroot\portfolio.html" />
     <Content Remove="wwwroot\Readme.txt" />
-    <Content Remove="wwwroot\Resume.html" />
   </ItemGroup>
 
   <ItemGroup>
@@ -238,13 +234,9 @@
     <None Include="wwwroot\assets\vendor\swiper\swiper-bundle.min.css" />
     <None Include="wwwroot\assets\vendor\swiper\swiper-bundle.min.js" />
     <None Include="wwwroot\assets\vendor\swiper\swiper-bundle.min.js.map" />
-    <None Include="wwwroot\classmates.html" />
-    <None Include="wwwroot\contact.html" />
     <None Include="wwwroot\forms\contact.php" />
     <None Include="wwwroot\forms\Readme.txt" />
-    <None Include="wwwroot\portfolio.html" />
     <None Include="wwwroot\Readme.txt" />
-    <None Include="wwwroot\Resume.html" />
   </ItemGroup>
 
   <ItemGroup>
@@ -253,6 +245,9 @@
     <PackageReference Include="Microsoft.AspNetCore.Identity.UI" Version="6.0.25" />
     <PackageReference Include="Microsoft.EntityFrameworkCore.SqlServer" Version="6.0.25" />
     <PackageReference Include="Microsoft.EntityFrameworkCore.Tools" Version="6.0.25" />
+    <PackageReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Design" Version="6.0.16" />
+    <PackageReference Include="NETCore.MailKit" Version="2.1.0" />
+    <PackageReference Include="PaulMiami.AspNetCore.Mvc.Recaptcha" Version="1.2.2" />
   </ItemGroup>
 
   <ItemGroup>
