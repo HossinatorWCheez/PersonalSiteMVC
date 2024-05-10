@@ -33,8 +33,6 @@
     <Content Remove="wwwroot\assets\img\trainers\haley.jpg" />
     <Content Remove="wwwroot\assets\img\trainers\Jeremy.jpg" />
     <Content Remove="wwwroot\assets\img\trainers\spencer.png" />
-    <Content Remove="wwwroot\assets\img\trainers\taryn.jpg" />
-    <Content Remove="wwwroot\assets\img\trainers\thomas.jpg" />
     <Content Remove="wwwroot\assets\js\main.js" />
     <Content Remove="wwwroot\assets\My resume.pdf" />
     <Content Remove="wwwroot\assets\scss\Readme.txt" />
@@ -149,8 +147,6 @@
     <None Include="wwwroot\assets\img\trainers\haley.jpg" />
     <None Include="wwwroot\assets\img\trainers\Jeremy.jpg" />
     <None Include="wwwroot\assets\img\trainers\spencer.png" />
-    <None Include="wwwroot\assets\img\trainers\taryn.jpg" />
-    <None Include="wwwroot\assets\img\trainers\thomas.jpg" />
     <None Include="wwwroot\assets\js\main.js" />
     <None Include="wwwroot\assets\My resume.pdf" />
     <None Include="wwwroot\assets\scss\Readme.txt" />

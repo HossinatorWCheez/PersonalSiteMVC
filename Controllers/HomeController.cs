@@ -4,7 +4,6 @@ using MimeKit;
 using MailKit.Net.Smtp;
 using PersonalSiteMVC.Models;
 using System.Diagnostics;
-using static Org.BouncyCastle.Math.EC.ECCurve;
 
 namespace PersonalSiteMVC.Controllers
 {
