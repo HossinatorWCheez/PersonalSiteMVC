@@ -555,10 +555,8 @@ section {
   color: #fff;
 }
 
-@media (max-width: 992px) {
-  .breadcrumbs {
-    margin-top: 63px;
-  }
+#breadcrumbs {
+    margin-top: 3.5em;
 }
 
 .breadcrumbs h2 {
@@ -1696,7 +1694,7 @@ div.member ul {
 }
 @media (max-width: 767px){
   footer#footer {
-    height: 1000px;
+    height: 1250px;
   }
   footer#footer div.container2 {
     display: block;
