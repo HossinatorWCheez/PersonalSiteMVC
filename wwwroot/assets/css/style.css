@@ -549,7 +549,6 @@ section {
 }
 
 .breadcrumbs {
-  margin-top: 73px;
   text-align: center;
   background-color: #302B33;
   padding: 30px 0;
@@ -1706,4 +1705,8 @@ div.member ul {
 
 #toDoLink {
     color: #fff;
+}
+
+#testimonial {
+    margin-top: 3.5em;
 }
